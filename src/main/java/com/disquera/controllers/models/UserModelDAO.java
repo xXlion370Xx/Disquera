@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class LoginModelDAO extends ConectionDB {
+public class UserModelDAO extends ConectionDB {
 
     // Instantiate variables
     Connection connection;
@@ -18,7 +18,7 @@ public class LoginModelDAO extends ConectionDB {
     String sql;
     PreparedStatement query;
 
-    public LoginModelDAO(LoginModelVO loginVO){
+    public UserModelDAO(UserModelVO loginVO){
 
         // Connection to database
         try {
@@ -26,14 +26,15 @@ public class LoginModelDAO extends ConectionDB {
             user = loginVO.getUser();
             password = loginVO.getPassword();
         }catch (Exception e){
-            Logger.getLogger(LoginModelDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserModelDAO.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 
+    // Login method 
     public boolean validateLogin() throws SQLException {
         try{
             // Do prepare statement to get de result query
-            sql = "SELECT * FROM usuario WHERE nombreUsuario = ? AND contraseñaUsuario = ?";
+            sql = "SELECT * FROM usuario WHERE nombreUsuario = ? AND passwordUsuario = ?";
             query = connection.prepareStatement(sql);
             query.setString(1, user);
             query.setString(2, password);
