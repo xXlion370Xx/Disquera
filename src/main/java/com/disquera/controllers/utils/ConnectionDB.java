@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConectionDB {
+public class ConnectionDB {
 
     // Instantiate the variables to connect database
     private final String driver;
@@ -18,7 +18,7 @@ public class ConectionDB {
     // Instantiate object connection
     private Connection connection;
 
-    public ConectionDB(){
+    public ConnectionDB(){
         driver = "com.mysql.cj.jdbc.Driver";
         user = "root";
         password = "";
@@ -48,7 +48,7 @@ public class ConectionDB {
     }
 
     public static void main (String [] args){
-        new ConectionDB();
+        new ConnectionDB();
     }
 
 }
