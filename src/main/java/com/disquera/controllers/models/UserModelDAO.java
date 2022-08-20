@@ -1,6 +1,6 @@
 package com.disquera.controllers.models;
 
-import com.disquera.controllers.utils.ConectionDB;
+import com.disquera.controllers.utils.ConnectionDB;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class UserModelDAO extends ConectionDB {
+public class UserModelDAO extends ConnectionDB {
 
     // Instantiate variables
     Connection connection;
@@ -45,6 +45,8 @@ public class UserModelDAO extends ConectionDB {
             if (resultSet.next()) {
                 resultQuery[0] = resultSet.getString(4);
                 resultQuery[1] = resultSet.getString(5);
+
+                this.cerrarConexion();
                 return resultQuery;
             }
 
