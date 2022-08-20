@@ -9,7 +9,6 @@
 <form action="Login" method="post">
     <input type="text" name="user" placeholder="Usuario" required> <br>
     <input type="password" name="password" placeholder="Contraseña" required> <br>
-    <input type="hidden" name="option" value="1"> <br>
     <button>INICIAR SESIÓN</button>
     <%
         if (request.getAttribute("mensajeError") !=null) {%>
