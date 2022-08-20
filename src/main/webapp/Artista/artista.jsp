@@ -17,9 +17,9 @@
             <ul>
                 <li>Logo</li>
                 <li><a href="artista.jsp">Inicio</a></li>
-                <li><a href="#">Mi Música</a></li>
-                <li><a href="#">Mis Álbumes</a></li>
-                <li><a href="#">Mi Perfil</a></li>
+                <li><a href="Artist?view=music">Mi Música</a></li>
+                <li><a href="Artist?view=album">Mis Álbumes</a></li>
+                <li><a href="Artist?vies=profile">Mi Perfil</a></li>
             </ul>
             <a href="#">Cerrar Sesión</a>
         </div>
