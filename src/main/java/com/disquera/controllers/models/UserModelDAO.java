@@ -30,8 +30,9 @@ public class UserModelDAO extends ConectionDB {
         }
     }
 
-    // Login method 
-    public boolean validateLogin() throws SQLException {
+    // Login method return an array of 2 values, first is the user rol and second value of user state
+    public String[] validateLogin() throws SQLException {
+        String[] resultQuery = new String[2];
         try{
             // Do prepare statement to get de result query
             sql = "SELECT * FROM usuario WHERE nombreUsuario = ? AND passwordUsuario = ?";
@@ -40,7 +41,15 @@ public class UserModelDAO extends ConectionDB {
             query.setString(2, password);
             // Execute query
             ResultSet resultSet = query.executeQuery();
-            return resultSet.next();
+
+            if (resultSet.next()) {
+                resultQuery[0] = resultSet.getString(4);
+                resultQuery[1] = resultSet.getString(5);
+                return resultQuery;
+            }
+
+            return null;
+
         }catch (SQLException e) {
             throw new RuntimeException(e);
         }
