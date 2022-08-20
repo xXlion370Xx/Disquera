@@ -1,6 +1,6 @@
-package com.disquera.controllers.models;
+package com.disquera.models;
 
-import com.disquera.controllers.utils.ConnectionDB;
+import com.disquera.utils.ConnectionDB;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

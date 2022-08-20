@@ -1,7 +1,7 @@
-package com.disquera.controllers.controllers;
+package com.disquera.controllers;
 
-import com.disquera.controllers.models.UserModelDAO;
-import com.disquera.controllers.models.UserModelVO;
+import com.disquera.models.UserModelDAO;
+import com.disquera.models.UserModelVO;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
