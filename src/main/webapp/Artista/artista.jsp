@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.disquera.controllers.models.UserModelVO" %><%--
   Created by IntelliJ IDEA.
   User: lion3
   Date: 18/08/2022
@@ -6,12 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="../sessions.jsp" %>
 <html>
 <head>
     <title>Artista</title>
 </head>
 <body>
 
+    <% UserModelVO userModelVO = (UserModelVO) session1.getAttribute("userData");%>
+
+    <h1>Bienvenido <%=userModelVO.getUser()%></h1>
     <div class="container">
         <div class="nav">
             <ul>
@@ -21,7 +25,7 @@
                 <li><a href="Artist?view=album">Mis Álbumes</a></li>
                 <li><a href="Artist?vies=profile">Mi Perfil</a></li>
             </ul>
-            <a href="#">Cerrar Sesión</a>
+            <a href="Session">Cerrar Sesión</a>
         </div>
         <div class="content">
             <div class="content_img">
