@@ -71,9 +71,11 @@ public class UserController extends HttpServlet {
                         request.getRequestDispatcher("index.jsp").forward(request, response);
 
                     }
+                }else {
+                    request.setAttribute("mensajeError", "Usuario no existe");
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
                 }
-                request.setAttribute("mensajeError", "Usuario no existe");
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+
 
 
             } catch (SQLException e) {
