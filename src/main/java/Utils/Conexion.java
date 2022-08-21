@@ -2,6 +2,7 @@ package Utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Conexion {
     //establecer variables para la conexion
@@ -29,7 +30,13 @@ public class Conexion {
     public  Connection getConnetion(){
         return con;
     }
-    public static void main (String [] args){
+    //metodo para cerrar conexion
+    public Connection cerrarConexion() throws SQLException{
+       con.close();
+       con= null;
+       return con;
+    }
+    public static void main(String[] args){
         new Conexion();
     }
 
