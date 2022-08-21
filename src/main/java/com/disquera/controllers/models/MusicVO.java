@@ -12,6 +12,9 @@ public class MusicVO {
         this.status = status;
     }
 
+    public MusicVO(){
+    }
+
     public String getId() {
         return id;
     }
