@@ -13,8 +13,24 @@ public class ArtistModelVO extends UserModelVO{
     private String status;
     private String userId;
 
-    public ArtistModelVO(String user, String password) {
+    public ArtistModelVO(String user, String password, String id, String numDoc,String typeDoc, String name, String lastName, String nickname, String birthDay, String email, String company, String status, String userId) {
         super(user, password);
+        this.id = id;
+        this.numDoc = numDoc;
+        this.typeDoc = typeDoc;
+        this.name = name;
+        this.lastName = lastName;
+        this.nickname = nickname;
+        this.birthDay = birthDay;
+        this.email = email;
+        this.company = company;
+        this.status = status;
+        this.userId = userId;
+    }
+
+    public ArtistModelVO(String user, String password, String userId) {
+        super(user, password);
+        this.userId = userId;
     }
 
     public String getId() {

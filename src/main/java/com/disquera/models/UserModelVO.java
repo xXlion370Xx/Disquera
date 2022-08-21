@@ -8,6 +8,14 @@ public class UserModelVO {
     private String rol;
     private String status;
 
+    public UserModelVO(String id, String user, String password, String rol, String status) {
+        this.id = id;
+        this.user = user;
+        this.password = password;
+        this.rol = rol;
+        this.status = status;
+    }
+
     public UserModelVO(String user, String password) {
         this.user = user;
         this.password = password;
