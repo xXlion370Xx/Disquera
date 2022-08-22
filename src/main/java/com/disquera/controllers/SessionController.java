@@ -1,4 +1,4 @@
-package com.disquera.controllers.controllers;
+package com.disquera.controllers;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;

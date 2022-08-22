@@ -1,4 +1,4 @@
-<%@ page import="com.disquera.controllers.models.UserModelVO" %><%--
+<%@ page import="com.disquera.models.UserModelVO" %><%--
   Created by IntelliJ IDEA.
   User: lion3
   Date: 18/08/2022

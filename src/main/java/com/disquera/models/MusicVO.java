@@ -1,4 +1,4 @@
-package com.disquera.controllers.models;
+package com.disquera.models;
 
 public class MusicVO {
     String id, name, recordDate, recordingTime, idAlbum, status;

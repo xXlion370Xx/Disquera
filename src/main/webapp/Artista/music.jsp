@@ -1,9 +1,9 @@
-<%@ page import="com.disquera.controllers.models.MusicVO" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.disquera.models.MusicVO" %><%--
   Created by IntelliJ IDEA.
   User: lion3
   Date: 21/08/2022
-  Time: 13:47
+  Time: 19:34
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,36 +12,31 @@
     <title>Mi musica</title>
 </head>
 <body>
-<h1>Tu música</h1>
-  <table>
+<h1>Tus canciones</h1>
+<table>
     <tr>
-      <th>Nombre Canción</th>
-      <th>Fecha Grabación</th>
-      <th>Duración</th>
-      <th>Album</th>
-      <th>Estado Canción</th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Duracion</th>
+        <th>Album</th>
+        <th>Estado</th>
     </tr>
     <%
-      MusicVO m = new MusicVO();
-      ArrayList<MusicVO> musicVO = (ArrayList<MusicVO>) request.getAttribute("listMusic");
-      for (MusicVO vo : musicVO) {
-        m = vo;
+        ArrayList<MusicVO> listMusic = (ArrayList<MusicVO>) request.getAttribute("listMusic");
+
+        for (MusicVO m : listMusic){
     %>
     <tr>
-      <td><%=m.getName()%>
-      </td>
-      <td><%=m.getRecordDate()%>
-      </td>
-      <td><%=m.getRecordingTime()%>
-      </td>
-      <td><%=m.getIdAlbum()%>
-      </td>
-      <td><%=m.getStatus()%>
-      </td>
+        <td><%=m.getName()%></td>
+        <td><%=m.getRecordDate()%></td>
+        <td><%=m.getRecordingTime()%></td>
+        <td><%=m.getIdAlbum()%></td>
+        <td><%=m.getStatus()%></td>
     </tr>
     <%
-      }
+        }
     %>
-  </table>
+</table>
+
 </body>
 </html>
