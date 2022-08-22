@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static java.lang.Integer.parseInt;
+
 
 public class LoginDAO extends Conexion{
 
@@ -16,6 +16,8 @@ public class LoginDAO extends Conexion{
     private ResultSet mensajero;
 
     private String sql;
+
+    private boolean  operacion = false;
     private String nombreUsuario = "", passwordUsuario = "";
 
     //constructor para recibir los datos
@@ -33,30 +35,80 @@ public class LoginDAO extends Conexion{
         }
     }
 
-    public int[] iniciarSesion(String nombreUsuario, String passwordUsuario) {
-        int[] resultado = new int[2];
+    public String[] validarLogin(String nombreUsuario, String passwordUsuario) {
+        String[] resultado = new String[2];
         try {
             sql = "SELECT * FROM usuario WHERE nombreUsuario = ? AND passwordUsuario = ?";
+
             puente = con.prepareStatement(sql);
             puente.setString(1, nombreUsuario);
             puente.setString(2, passwordUsuario);
             mensajero = puente.executeQuery();
             if (mensajero.next()) {
 
-                resultado[0] = mensajero.getInt(4);
+                String idUsuarioSQL = mensajero.getString(1);
+                String idUsuario = String.valueOf(idUsuarioSQL);
+                operacion = true;
 
-                this.cerrarConexion();
-                return resultado;
+                resultado[0] = idUsuario;
+                resultado[1] = String.valueOf(operacion);
 
+            }else{
+                resultado[0] = null;
+                resultado[1] = null;
             }
-
-            return null;
 
         } catch (SQLException e) {
             Logger.getLogger(LoginDAO.class.getName()).log(Level.SEVERE, null, e);
         }
+        return  resultado;
     }
 
+    public String consultarRol(String nombreUsuario, String passwordUsuario){
+
+        String rol = null;
+
+        try{
+            sql  = "SELECT * FROM usuario WHERE nombreUsuario = ? and passwordUsuario = ?";
+            puente = con.prepareStatement(sql);
+            puente.setString(1, nombreUsuario);
+            puente.setString(2, passwordUsuario);
+            mensajero = puente.executeQuery();
+
+            String id = null;
+
+            if (mensajero.next()){
+                id = mensajero.getString(1);
+                sql = "SELECT * FROM usuario WHERE usuario.idUsuario = ?";
+                puente = con.prepareStatement(sql);
+                puente.setString(1, id);
+                mensajero = puente.executeQuery();
+
+                String rolUsuario = null;
+                if (mensajero.next()){
+                    rolUsuario= mensajero.getString(4);
+                    if (rolUsuario.equals("admin")){
+                        rol = "admin";
+                    } else if (rolUsuario.equals("artista")) {
+                        rol = "artista";
+
+                    } else {
+                        rol = null;
+                    }
+                }
+
+            }
+        }catch (Exception e) {
+            Logger.getLogger(LoginDAO.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
+            try {
+                this.cerrarConexion();
+            } catch (Exception e) {
+                Logger.getLogger(LoginDAO.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
+        return rol;
+    }
 
 }
 
