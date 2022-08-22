@@ -1,4 +1,4 @@
-package com.disquera.controllers.utils;
+package com.disquera.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
