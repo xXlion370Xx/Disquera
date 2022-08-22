@@ -47,15 +47,6 @@ public class UsuarioControlador extends HttpServlet {
                     request.getRequestDispatcher("index.jsp").forward(request, response);
                 }
                 break;
-
-            case 5: //Eliminar Registro
-                if (usuDAO.eliminarRegistro()) {
-                    request.setAttribute("mensajeExito", "El usuario se elimino correctamente ");
-                } else {
-                    request.setAttribute("mensajeError", "El usuario No se elimino correctamente ");
-                }
-                request.getRequestDispatcher("EliminarUsuario.jsp").forward(request, response);
-                break;
         }
 
     }
