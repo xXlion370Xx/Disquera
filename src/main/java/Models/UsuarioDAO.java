@@ -63,7 +63,6 @@ public class UsuarioDAO extends ConexionDB {
                 Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
 
             }
-
         }
         return UsuVO;
     }
@@ -73,7 +72,7 @@ public class UsuarioDAO extends ConexionDB {
         ArrayList<UsuarioVO> listaUsuario = new ArrayList<>();
         try {
             conexion = this.obtenerConexion();
-            sql = "select* from usuario";
+            sql = "select* from Usuario";
             puente = conexion.prepareStatement(sql);
             mensajero = puente.executeQuery();
 
