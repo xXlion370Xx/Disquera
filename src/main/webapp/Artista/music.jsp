@@ -22,8 +22,7 @@
         <th>Estado</th>
     </tr>
     <%
-        HttpSession session1 = request.getSession();
-        ArrayList<MusicVO> listMusic = (ArrayList<MusicVO>) session1.getAttribute("listMusic");
+        ArrayList<MusicVO> listMusic = (ArrayList<MusicVO>) request.getAttribute("listMusic");
 
         for (MusicVO m : listMusic){
     %>
