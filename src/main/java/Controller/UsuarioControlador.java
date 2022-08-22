@@ -39,12 +39,12 @@ public class UsuarioControlador extends HttpServlet {
                     usuVO = new UsuarioVO(idUsuario, nombreUsuario, passwordUsuario, rolUsuario, estadoUsuario);
                     miSesion.setAttribute("datosUsuario", usuVO);
                     miSesion.setAttribute("idUsuario", usuVO.getIdUsuario());
-                    request.getRequestDispatcher("Menu.jsp").forward(request, response);
+                    request.getRequestDispatcher("Album.jsp").forward(request, response);
 
                 } else {
 
                     request.setAttribute("mensajeExito", "<center><h2>Datos de ingreso incorrectos</h2></center>");
-                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                    request.getRequestDispatcher("Login.jsp").forward(request, response);
                 }
                 break;
         }
