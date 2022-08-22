@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Albumes</title>
 </head>
 <body>
-
+<h1>Esta es la vista de los Albumes Principal</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem dignissimos earum ex inventore ipsum labore magni, nemo nesciunt non odit quaerat quia sunt tempora vero. Cum minima quod saepe!</p>
 </body>
 </html>
