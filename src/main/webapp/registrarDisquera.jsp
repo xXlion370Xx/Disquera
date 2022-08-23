@@ -15,15 +15,15 @@
         <tr>
             <th>
                 <p>NIT disquera</p><br>
-                <input type="text" name="txtNit">
+                <input type="text" name="txtNit" required>
                 <p>Nombre</p><br>
-                <input type="text" name="txtName">
+                <input type="text" name="txtName" required>
                 <p>Telefono</p><br>
-                <input type="tel" name="txtTel">
+                <input type="tel" name="txtTel" required>
                 <p>Direccion</p><br>
-                <input type="text" name="txtDir">
+                <input type="text" name="txtDir" required>
                 <p>Estado</p><br>
-                <select name="txtEstado" id="estado">
+                <select name="txtEstado" id="estado" required>
                     <option value="Activo">Activo</option>
                     <option value="Inactivo">Inactivo</option>
                 </select>
