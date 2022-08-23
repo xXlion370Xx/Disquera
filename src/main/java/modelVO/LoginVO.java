@@ -20,11 +20,11 @@ public class LoginVO {
         this.passwordUsuario = passwordUsuario;
     }
 
-    public LoginVO(String nombreUsuario, String passwordUsuario, String rolUsuario, String estadoUsuario) {
+    public LoginVO(String idUsuario, String nombreUsuario, String passwordUsuario, String rolUsuario) {
+        this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
         this.passwordUsuario = passwordUsuario;
         this.rolUsuario = rolUsuario;
-        this.estadoUsuario = estadoUsuario;
     }
 
     public LoginVO() {
