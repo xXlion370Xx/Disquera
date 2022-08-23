@@ -12,6 +12,14 @@ public class DisqueraVO {
         this.estadoDisquera = estadoDisquera;
     }
 
+    public DisqueraVO(String nitDisquera, String nombreDisquera, String telefonoDisquera, String direccionDisquera, String estadoDisquera) {
+        this.nitDisquera = nitDisquera;
+        this.nombreDisquera = nombreDisquera;
+        this.telefonoDisquera = telefonoDisquera;
+        this.direccionDisquera = direccionDisquera;
+        this.estadoDisquera = estadoDisquera;
+    }
+
     public DisqueraVO() {
     }
 
