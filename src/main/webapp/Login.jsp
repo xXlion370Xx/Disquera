@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="Controller.UsuarioControlador"%>
+<%@page import="Models.UsuarioVO"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -25,6 +26,14 @@
   <input type="hidden" value="1" name="opcion">
 
 </form>
+
+<%
+
+    if (request.getAttribute("mensajeError") != null) {%>
+${mensajeError}
+<% } else {%>
+${mensajeExito}
+<%}%>
 
 </body>
 </html>
