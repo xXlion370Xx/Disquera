@@ -18,7 +18,7 @@
     <h3>Consultar disquera por NIT</h3>
     <form method="post" action="Disquera" >
         <input type="text" name="txtNit" placeholder="NIT de la disquera">
-        <input type="submit" value="actualizar" name="btnOpcion">
+        <input type="submit" value="Consultar" name="btnOpcion">
     </form>
     <h3>Disqueras existentes</h3>
     <table>

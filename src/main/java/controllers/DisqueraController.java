@@ -42,6 +42,7 @@ public class DisqueraController extends HttpServlet {
                 }
                 request.getRequestDispatcher("registrarDisquera.jsp").forward(request,response);
                 break;
+            case "Consultar":
 
         }
 
