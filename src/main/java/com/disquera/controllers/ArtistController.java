@@ -37,6 +37,11 @@ public class ArtistController extends HttpServlet {
 
                 request.getRequestDispatcher("Artista/inicio.jsp").forward(request, response);
                 break;
+            case "edit-album":
+                break;
+            case "add-album":
+                request.getRequestDispatcher("Artista/addAlbum.jsp").forward(request, response);
+                break;
             default:
                 break;
         }

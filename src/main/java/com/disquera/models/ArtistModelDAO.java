@@ -47,21 +47,28 @@ public class ArtistModelDAO extends ConnectionDB {
     public ArrayList<MusicVO> consultMusic(){
         ArrayList<MusicVO> musicList = new ArrayList<>();
         try {
+
             // connect to dabase
             connection = this.getConnection();
             sql = "SELECT cancion.idCancion, cancion.nombreCancion, cancion.fechaGrabacion, cancion.duracionCancion, cancion.idAlbumFK, cancion.estadoCancion FROM cancion INNER JOIN album a on cancion.idAlbumFK = a.idAlbum INNER JOIN artista a2 on a.idArtistaFK = a2.idArtista INNER JOIN usuario u on a2.idUsuarioFK = u.idUsuario WHERE idUsuario = ?;";
             query = connection.prepareStatement(sql);
             query.setString(1, userId);
             ResultSet resultSet = query.executeQuery();
+
             while (resultSet.next()){
+
                 MusicVO musicVO = new MusicVO(resultSet.getString("idCancion"), resultSet.getString("nombreCancion"), resultSet.getString("fechaGrabacion"), resultSet.getString("duracionCancion"), resultSet.getString("idAlbumFK"), resultSet.getString("estadoCancion"));
                 musicList.add(musicVO);
+
             }
 
             return musicList;
         }catch (SQLException e){
+
             Logger.getLogger(MusicVO.class.getName()).log(Level.SEVERE, null, e);
             return null;
+
         }
     }
+
 }

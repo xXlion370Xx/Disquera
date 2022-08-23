@@ -35,19 +35,19 @@
             <div class="content_menu">
                 <h2>¿Qué deseas hacer hoy?</h2>
 
-                <a href="">
+                <a href="Artist?view=edit-album">
                     <img src="#" alt="Icono descriptivo">
                     Editar albums
                 </a>
-                <a href="">
+                <a href="Artist?view=add-album">
                     <img src="#" alt="Icono descriptivo">
                     Agregar albums
                 </a>
-                <a href="">
+                <a href="Artist?view=edit-song">
                     <img src="#" alt="Icono descriptivo">
                     Editar tus canciones
                 </a>
-                <a href="">
+                <a href="Artist?view=add-song">
                     <img src="#" alt="Icono descriptivo">
                     Agregar nuevas canciones
                 </a>
