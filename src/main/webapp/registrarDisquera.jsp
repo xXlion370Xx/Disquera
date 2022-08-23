@@ -29,7 +29,7 @@
                 </select>
             </th>
         </tr>
-        <input type="submit" value="Agregar" name="opcion">
+        <input type="submit" value="Agregar" name="btnAgregar">
     </form>
     <%
         if (request.getAttribute("mensajeError") != null) {
