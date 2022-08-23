@@ -10,22 +10,34 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/Style.css">
     <title>Login</title>
 </head>
 <body>
 
-<form action="Usuario" method="post">
+<center>
+    <form action="Usuario" method="post">
+        <img src="./IMG/Logo.png" alt="">
+        <br>
+        <input type="text" name="textUsuario" placeholder="Correo Electronico" required class="User">
+        <br>
+        <br>
+        <input type="password" name="textClave" placeholder="Contraseña" required class="Pass">
+        <br>
+        <br>
+        <br>
+        <div>
+            <button type="submit" class="Button">INICIAR SESIÓN</button>
+            <input type="hidden" value="1" name="opcion">
+            <br>
+            <span class="H1">¿Contraseña Olvidada?</span>
+        </div>
 
-  <span>Usuario</span>
-  <input type="text" name="textUsuario" placeholder="Ingresar Usuario" required>
-  <br>
-  <span>Contraseña</span>
-  <input type="password" name="textClave" placeholder="Ingresar Clave" required>
-  <br>
-  <button type="submit">Hecho</button>
-  <input type="hidden" value="1" name="opcion">
-
-</form>
+    </form>
+</center>
 
 <%
 
