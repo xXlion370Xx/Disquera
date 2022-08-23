@@ -33,6 +33,10 @@ public class ArtistController extends HttpServlet {
                 break;
             case "profile":
                 break;
+            case "home":
+
+                request.getRequestDispatcher("Artista/inicio.jsp").forward(request, response);
+                break;
             default:
                 break;
         }

@@ -54,7 +54,7 @@ public class UserController extends HttpServlet {
 
                             HttpSession session = request.getSession(true);
                             session.setAttribute("userData", userModelVO);
-                            request.getRequestDispatcher("Artista/artista.jsp").forward(request, response);
+                            request.getRequestDispatcher("Artista/inicio.jsp").forward(request, response);
 
                         }// Validate the admin
                         else if(userModelVO.getRol().equals("Administrador")){

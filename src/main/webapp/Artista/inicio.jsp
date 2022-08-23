@@ -6,10 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="../sessions.jsp" %>
+
 <html>
 <head>
     <title>Artista</title>
+    <%@include file="../sessions.jsp" %>
 </head>
 <body>
 
@@ -20,7 +21,7 @@
         <div class="nav">
             <ul>
                 <li>Logo</li>
-                <li><a href="artista.jsp">Inicio</a></li>
+                <li><a href="Artist?view=home">Inicio</a></li>
                 <li><a href="Artist?view=music">Mi Música</a></li>
                 <li><a href="Artist?view=album">Mis Álbumes</a></li>
                 <li><a href="Artist?vies=profile">Mi Perfil</a></li>
