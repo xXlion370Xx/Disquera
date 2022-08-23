@@ -24,14 +24,14 @@ public class DisqueraController extends HttpServlet {
         String telefonoDisquera = request.getParameter("txtTel");
         String direccionDisquera = request.getParameter("txtDir");
         String estadoDisquera = request.getParameter("txtEstado");
-        String btnAgregar = request.getParameter("btnAgregar");
+        String btnOpcion = request.getParameter("btnOpcion");
 
         //Almacenar los datos de forma segura con el VO
         DisqueraVO disVO = new DisqueraVO(nitDisquera, nombreDisquera,telefonoDisquera,direccionDisquera,estadoDisquera);
         //Operaciones
         DisqueraDAO disDAO = new DisqueraDAO(disVO);
 
-        switch (btnAgregar){
+        switch (btnOpcion){
 
             case "Agregar":
                 if (disDAO.agregarRegistro()){
@@ -42,6 +42,7 @@ public class DisqueraController extends HttpServlet {
                 }
                 request.getRequestDispatcher("registrarDisquera.jsp").forward(request,response);
                 break;
+
         }
 
     }
