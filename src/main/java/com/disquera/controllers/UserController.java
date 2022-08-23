@@ -45,12 +45,12 @@ public class UserController extends HttpServlet {
                     if(user.equals(userModelVO.getUser()) && password.equals(userModelVO.getPassword())){
 
                         //Validate if the user is active
-                        if (userModelVO.getRol().equals("Artista") && userModelVO.getStatus().equals("inactivo")) {
+                        if (userModelVO.getRol().equals("artista") && userModelVO.getStatus().equals("inactivo")) {
 
                             request.setAttribute("mensajeError", "Usuario inactivo, por favor contacte con un administrador");
                             request.getRequestDispatcher("index.jsp").forward(request, response);
 
-                        }else if(userModelVO.getRol().equals("Artista") && userModelVO.getStatus().equals("activo")){
+                        }else if(userModelVO.getRol().equals("artista") && userModelVO.getStatus().equals("activo")){
 
                             HttpSession session = request.getSession(true);
                             session.setAttribute("userData", userModelVO);
