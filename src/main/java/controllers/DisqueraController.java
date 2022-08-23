@@ -43,6 +43,14 @@ public class DisqueraController extends HttpServlet {
                 request.getRequestDispatcher("registrarDisquera.jsp").forward(request,response);
                 break;
             case "Consultar":
+                disVO = disDAO.consultarNit(nitDisquera);
+                if (disVO != null){
+                    request.setAttribute("disqueraConsultada", disVO);
+                    request.getRequestDispatcher("disqueraConsultada.jsp").forward(request,response);
+                } else {
+                    request.setAttribute("mensajeError", "disquera no existe");
+                    request.getRequestDispatcher("consultarDisquera.jsp").forward(request,response);
+                }
 
         }
 
